@@ -3,7 +3,7 @@ ZETELLKASTEN system
 '''
 import random  # generovanie cisel - id cislo
 import os  # manipulacia s adresarmi a subormi
-
+import json
 baza_dat = dict()  # tu budu vsetky nase data  SLOVNIK
 
 
@@ -58,6 +58,12 @@ def nahraj_karticky(zoznam: list):
             # print(raw_karticka)
     return
 
+
+def uloz_karticky_do_jsona():
+    json_file = os.getcwd() + "\index.json"
+    with open(file=json_file, mode='w', encoding='utf8') as f:
+        json.dump({"data": baza_dat}, fp=f, indent=4)
+    return
 
 def generuj_id():
     """
@@ -228,6 +234,7 @@ while True:
     index = zberatel_karticiek()
     print(index)
     nahraj_karticky(index)
+    uloz_karticky_do_jsona()
 
     
     """ HLAVNY PROGRAM, KTORY POMOCOU NEKONECNEHO CYKLU PRIJIMA PRIKAZY OD UZIVATELA"""
