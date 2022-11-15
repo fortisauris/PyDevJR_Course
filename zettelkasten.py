@@ -60,9 +60,14 @@ def nahraj_karticky(zoznam: list):
 
 
 def uloz_karticky_do_jsona():
+    '''
+    Vsetky karticky zozbierane zberatelom a ulozene v baze dat, naformatuj a uloz do
+    suboru index.json v adresari.
+    '''
     json_file = os.getcwd() + "\index.json"
     with open(file=json_file, mode='w', encoding='utf8') as f:
         json.dump({"data": baza_dat}, fp=f, indent=4)
+        print("DATA BOLI ULOZENE DO index.json")
     return
 
 def generuj_id():
