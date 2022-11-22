@@ -21,27 +21,32 @@ O P A K O V A N I E   Z A K L A D N E H O   S Y N T A X U
 # VARIABLES
 
 # INTEGER
-a = int()
+a = int()  # Integer
 a = 4637673
 print(type(a))
 print(dir(a))
 
+# Float
+a = float()
+
+
 # STRINGY
-text = str()
-text = 'text'
+text = str()  # String
+text = 'Pomoc'
 text = 2 * text
-text[0]
-text[-1]
+text[0]  # prvy znak
+text[-1]  # posledny znak   -1 0 1 2 3 4 5 6
 print(type(text))
 print(dir(text))
 
 a = float()
 a = 43.5647654
 
+flag = bool()  # logicka hodnota
 flag = True
 flag = False
 
-a = bytes('hfjdshfjd', encoding="utf8")
+a = bytes('hfjdshfjd', encoding="utf8")  # 1 0  - A 65  '1000001'
 print(a)
 
 print("AHA")
@@ -49,7 +54,7 @@ print("AHA")
 # quit()
 
 list()   # mutovatelnost, flexibility
-tuple()
+tuple()  # nemutovatelny zoznam
 set()  # sa neopakuje clenovia
 frozenset()  # zamrznuty
 dict()
@@ -57,7 +62,7 @@ dict()
 # cykly
 
 for i in range(5):
-    print(i)
+    print(i, 'UROB VOLACO')
 
 b = 0
 c = 0
@@ -65,9 +70,15 @@ while c < 10:
     print("UROB VOLACO")
     c += 1
 
+while True:
+
+    c += 1
+    break
+
 # riadenie toku programu
-if c == 10:
+if c == 10:   # !=
     print('c=10')
+
 elif c > 10 and b != 0:
     print('c je viac ako 10')
 else:
@@ -78,9 +89,12 @@ else:
 # break
 
 def sucet_fn(a, b):
+    '''
+    Tato funkcia zratava dve hodnoty
+    '''
     return a + b
 
-sucet = lambda a,b: a + b
+sucet = lambda a,b: a + b  # ekvivalent
 
 print(sucet_fn(2,2))
 print(sucet(2, 2))
@@ -114,17 +128,18 @@ del obj
 # ZACHYTAVANIE CHYB
 try:
     a = 54543/0
-except ZeroDivisionError:
-    print("NEMOZES DELIT NULOU !!!")
-    a = 54543/1
+except ZeroDivisionError:   # zachytavame
+    print("NEMOZES DELIT NULOU !!!")  # odkaz
+    a = 54543/1  #
 finally:
+
     print(a)
 
 '''
 D E P E N D E N C I E S  - Softver, ktory musi byt nainstalovany
 '''
 
-# Zettelkasten  Python 3.9 a dalsie verzie   DEPENDENCIES
+# Zettelkasten  Python 3.9 a dalsie verzie   DEPENDENCIES Vanilla Python
 # Dalsie Dependacies  - pyqt, tkinter, SQLAlchemy, redis
 # IDEME VYTVORIT VIRTUALNU OBALKU S CISTYM PYTHONOM
 
@@ -189,9 +204,6 @@ G I T   - V E R S I O N   C O N T R O L
 ''' git pull    '''
 
 
-
-
-
 '''
 A L G O R I T M U S  - P R I K L A D   R O Z D I E L Y   V  K O D E
 '''
@@ -239,7 +251,8 @@ def sbox_enc(sbox: list, key: int) -> int:
         # print(i, key)
     return key  # zasifrovane pismeno
 
-val = sbox_enc(sbox, ord("B"))
+
+val = sbox_enc(sbox, ord("B"))   # 26
 print(val)
 sbox.reverse()
 print(sbox)
