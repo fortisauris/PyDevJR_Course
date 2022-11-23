@@ -1,7 +1,4 @@
-latitude,longitude,elevation,utc_offset_seconds,timezone,timezone_abbreviation
-48.25,17.0,185.0,3600,Europe/Berlin,CET
-
-time,temperature_2m_max (°C),precipitation_sum (mm),rain_sum (mm)
+Date,temperatur_emax(°C),prec_sum (mm),rain_sum (mm)
 2017-11-18,7.8,0.00,0.00
 2017-11-19,6.1,2.70,2.70
 2017-11-20,7.3,0.00,0.00
