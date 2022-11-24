@@ -12,7 +12,7 @@ print(block_prepared)
 block_bytes = bytes(block_prepared)
 print(block_bytes)
 
-obj = hmac.new(key=key, msg=block_bytes, digestmod='md5')
+obj = hmac.new(key=key, msg=block_bytes, digestmod='md5')  # Vytvarame si HMAC object
 
 # vypocitavame Valid block
 
@@ -27,3 +27,7 @@ while True:
         input()
     else:
         c += 1
+
+# JSON, lokalne
+# JSON, webserver cez urllib
+# Cloud - DATABAZA
