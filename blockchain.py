@@ -1,9 +1,22 @@
 import hmac
 import pickle
+import random
 
-block = [{'account1': 57634564765, 'account2': 654836594, 'amount': 674.50},
-         {'account1': 57634564765, 'account2': 654836594, 'amount': 674.50},
-         {'account1': 57634564765, 'account2': 654836594, 'amount': 674.50}]
+def account_generator():
+    return random.randint(111111111,999999999)
+
+def block_generator():
+    block = []
+    for i in range(0,5):
+        transakcia = dict()
+        transakcia['account1'] = account_generator()
+        transakcia['account2'] = account_generator()
+        transakcia['amount'] = random.randint(1,1000000)
+        block.append(transakcia)
+    return block
+
+
+block = block_generator()
 
 key = bytes('542354387254573', encoding='utf8')
 
