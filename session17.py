@@ -17,11 +17,11 @@ Spravte funkciu, GENERATOR, ktora na zavolanie vrati MESIAC v Stringu Januar, Fe
 
 
 def mes_gen():
-    mesiace = ('jan','feb','mar', 'apr')
+    mesiace = ('jan','feb','mar', 'apr')  # tuple s mesiacmi
     for i in mesiace:
         yield i
 
-a = mes_gen()
+a = mes_gen()   # Activovali sme generator
 
 print(next(a))
 print(next(a))
