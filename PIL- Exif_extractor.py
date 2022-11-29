@@ -1,31 +1,3 @@
-# AHOJTE VSETCI CO VIETE POUZIVAT GIT PULL
-
-'''
-
-C O M P R E H E N S I O N S   L I S T   A N D   D I C T
-
-'''
-
-#  K L A S I K A
-
-zoznam = list()  # []
-for i in range(6):
-    zoznam.append(i*3.14)
-print(zoznam)
-
-#  M O D E R N A
-
-zoznam = [i*3.14 for i in range(6) if i*3.14 != 0]   # [hodnota cyklus/iteracia filter]
-print(zoznam)
-
-meno = 'Milan'
-
-slovnik = {x:meno[x] for x in range(len(meno))}
-print(slovnik)
-print(slovnik[3])
-print(slovnik.keys(), slovnik.values())
-
-
 import os
 from PIL import Image
 from PIL.ExifTags import TAGS, GPSTAGS
@@ -65,7 +37,7 @@ def get_exif(file_w_path: str):
 
 
 if __name__ == '__main__':
-    compress_image('coder.jpg', 'coder3.jpg')
+    # compress_image('coder.jpg', 'coder3.jpg')
     get_jpegs(r"C:\Users\andrejli\PycharmProjects\CestaNaJupyter")
     get_exif(r'C:\Users\andrejli\PycharmProjects\CestaNaJupyter\coder.jpg')
 
