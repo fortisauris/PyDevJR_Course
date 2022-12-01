@@ -49,6 +49,15 @@ if len(rimske_cislo) == 2:
 
 # VIII a XIII
 
+'''
+O P E N P Y X L   - B A S I C S 
+
+'''
+
+# Obalka s jupyter notebookom
+
+# pokracujeme v OPXLS.py
+
 #  K R Y P T O G R A F I A  -  Bitwise POSUN v bitoch
 
 a = bin(65)
