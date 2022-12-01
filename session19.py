@@ -24,8 +24,8 @@ def menic_znakov(znak: str):
 # algoritmus konverzie ->   IX  mensie cislo je pred vacsim    XI vacsie cislo je pred mensim
 rimske_cislo = 'XI'
 # konverovat 1znak
-if len(rimske_cislo) == 1:
-    rimske_cislo = menic_znakov(rimske_cislo)
+if len(rimske_cislo) == 1:  # ak je dlhy znak
+    rimske_cislo = menic_znakov(rimske_cislo)  # pouzijeme funkciu
     print(rimske_cislo)
 
 # konvertovat 2znak -- POZOR NA LOGIKU
@@ -44,19 +44,12 @@ if len(rimske_cislo) == 2:
 
 # TODO Domaca uloha vytvorit algoritmus
 
+    # tri cisla XII - XII
+
     print(rimske_cislo)
 # konvertovat 3 znaky
 
-# VIII a XIII
-
-'''
-O P E N P Y X L   - B A S I C S 
-
-'''
-
-# Obalka s jupyter notebookom
-
-# pokracujeme v OPXLS.py
+# VIII a XIII   XXIII 10 + 13
 
 #  K R Y P T O G R A F I A  -  Bitwise POSUN v bitoch
 
@@ -88,5 +81,5 @@ print(decr)
 # TODO Domaca Uloha spravit posun podobne ako posun valcov pri Enigma
 # string = '0000001'
 # cyklus kolkokrat treba posunut
-posun = string[1:] + string[0]
+# posun = string[1:] + string[0]
 

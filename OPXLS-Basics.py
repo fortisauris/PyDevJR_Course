@@ -19,20 +19,20 @@ if __name__ == '__main__':
     ws2['A1'] = 53454
     ws2['A2'] = 6543
     ws2['A3'] = 758476
-    ws2['A4'] = '=SUM(A1:A3)'
+    ws2['A4'] = '=SUM(A1:A3)'  # formula
 
     # WORKSHEET 3
     ws3 = wb.create_sheet(title='DATA')
     for row in range(1,15):
         for col in range(1,15):
             _ = ws3.cell(column=col, row=row, value=random.randint(0,9999))
-    print(ws3['B3'].value)
-    print(ws3['B3'].number_format)
+    print(ws3['B3'].value)  # vytlaci hodnotu do konzoly
+    print(ws3['B3'].number_format)  # General
     ws3.cell(row=3, column=2, value='SIGNAL LOST')
 
     alphabet = ('A','B','C','D')
     for col in alphabet:
-        cell = col+'15'
+        cell = col +'15'
         formula = '=SUM(%s1:%s14)' % (col, col)
         ws3[cell] = formula
 

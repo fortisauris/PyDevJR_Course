@@ -105,7 +105,7 @@ AlicineTajomstvo = 547665
 RobertoveTajomstvo = 657587
 
 # Server
-g = 45874238949  # nahodne cislo
+g = 45874238949  # nahodne cislo s vysokou entropiou
 n = 911  # prvocislo
 
 # Alica ide poslat Robertovi kluc
