@@ -1,6 +1,7 @@
 import hmac
 import pickle
 import random
+import json
 
 
 class BlockGenerator(object):
@@ -12,7 +13,7 @@ class BlockGenerator(object):
     """
 
     def __init__(self):
-        self.block = self.block_generator()
+        self.block = self.block_generator(6)
         self.key = bytes('542354387254573', encoding='utf8')
         self.block_prepared = pickle.dumps(self.block)
         # print(block_prepared)
@@ -26,13 +27,19 @@ class BlockGenerator(object):
         Main loop of generator.
         '''
         c = 1
+
+        # TODO Spustat block_generator vramci cyklu
         while True:
             print(self.hmac_obj.hexdigest())
             self.hmac_obj.update(bytes(c))  # prihadzujeme do mixera
             if self.hmac_obj.hexdigest()[:2] == '00':
                 print('VALID BLOCK', self.hmac_obj.hexdigest())
                 raw_block = pickle.loads(self.block_bytes)
-                [print(i) for i in raw_block]  # LIST COMPREHENSION
+                # TODO UKLADANIE DO SUBOROV
+                filename = 'PATH' + self.hmac_obj.hexdigest() + '.json'
+                self.uloz_do_jsonu(file=filename, block=raw_block)
+
+                # [print(i) for i in raw_block]  # LIST COMPREHENSION
                 c = 1
                 input()  # TU TO ZASTAVUJE A CAKA NA POVEL
             else:
@@ -57,6 +64,14 @@ class BlockGenerator(object):
             empty_block.append(transakcia)
         return empty_block
 
+    # I O
+    @staticmethod
+    def uloz_do_jsonu(file, block):
+        # json_output = json.dumps(block, indent=4)
+        # print(file, '\n', json_output)
+        with open(file=file, mode='w', encoding='utf8') as f:
+            json.dump(fp=f, obj=block, indent=4)
+        return None
 
 if __name__ == '__main__':
     obj = BlockGenerator()  # construct object of Blockchain generator
