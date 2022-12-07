@@ -72,9 +72,34 @@ def initial_permutation(block):
         print('DLZKA BLOKU NEBOLA 64 BITOV')
         return []
 
+def rozdel_bityna32bit(block):
+    lava_strana = block[:32]
+    prava_strana = block[32:]
+    if len(prava_strana) != len(lava_strana):
+        raise ValueError
+    else:
+        return (lava_strana,prava_strana)
+
+def expanduj_stranu(strana_blocku):
+    #(b1,b2,b3,b4) = (b4,b1,b2,b3,b2,b3,b4,b1)
+    result = []
+    b = 0
+    #for i in range(8):
+    result.append(strana_blocku[b+4])
+    result.append(strana_blocku[b])
+    result.append(strana_blocku[b+1])
+    result.append(strana_blocku[b+2])
+    result.append(strana_blocku[b + 1])
+    result.append(strana_blocku[b + 2])
+    result.append(strana_blocku[b + 4])
+    print(result)
+    return result[:8]
+
+
+
 
 if __name__ == "__main__":
-    msg = 'BRYNDZA1'
+    msg = 'BRYNDZA1'  # osem znakov
     bity = convert_to_bits(msg)
     print(bity)
     # mod1 = change_bits(0,1,bity)
@@ -82,3 +107,10 @@ if __name__ == "__main__":
     prva_permutacia = initial_permutation(bity)
     print(bity)
     print(prva_permutacia)
+    rozdelene = rozdel_bityna32bit(prva_permutacia)
+    print(rozdelene[0])
+    print(rozdelene[1])
+    expandovane = expanduj_stranu(rozdelene[0])
+    print(rozdelene[0], expandovane[:8])
+
+    # 16 kol sifrovania pomocou posunu a SBOXU.

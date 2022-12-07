@@ -1,5 +1,5 @@
 import os
 import sys
 
-PROJECT_PATH = os.getcwd()
-sys.path.append(PROJECT_PATH)
+PROJECT_PATH = os.getcwd()   # PyDevJR_Course/tests
+sys.path.append(PROJECT_PATH)  # prida do zoznamu systemovych cesticiek

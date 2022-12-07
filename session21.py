@@ -13,7 +13,7 @@ SESSION 21 - OPENPYXL, PYTEST, NTPClient, QUASIDES
 # pomocou if nastavte, ze nejake hodnoty vyhodime pomocou prikazu del, remove
 
 '''
-OpENPYXL - Nacitanie suboru z Excelu do OPENPYXL a ulozenie zmien
+OPENPYXL - Nacitanie suboru z Excelu do OPENPYXL a ulozenie zmien
 '''
 
 # pokracujeme OPXL_Load.py

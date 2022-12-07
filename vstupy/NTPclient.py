@@ -18,7 +18,7 @@ def ntp_time(host='pool.ntp.org', port=123):
 
 
 if __name__ == "__main__":
-    print(ntp_time())
-    print(time.ctime(ntp_time()).replace("  ",' '))
+    print(ntp_time())  # Unix Time
+    print(time.ctime(ntp_time()).replace("  ",' '))  # Zrozumitelny format casu
 
 

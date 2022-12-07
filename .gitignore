@@ -1,2 +1,4 @@
 .idea
 /PATH004d93c5af4825381e78fdecccc9bb1a.json
+/venv/
+/.pytest_cache/
