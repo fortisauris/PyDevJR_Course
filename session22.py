@@ -39,16 +39,16 @@ def vytlac_hlavicku(rq):
 
 
 rq2 = requests.get('https://api.github.com/search/repositories', params=b'q=requests+languague:python')
-print(rq2.status_code)
+print(rq2.status_code)  # 200
 vytlac_hlavicku(rq2)
 
-def google_search(query):
-    with requests.session() as c:
+def google_search(query):  # Beatles
+    with requests.Session() as c:
         url = 'https://www.google.com'
         query = {'q': query, 'gl':'sk', 'hl':'sk'}
         urllink = requests.get(url, params=query)
         print('LINK : \t', urllink.url)
-        print('STATUS : \t', urllink.status_code)
+        print('STATUS : \t', urllink.status_code)  # 200
         vytlac_hlavicku(urllink)
     return urllink.text
 
@@ -68,13 +68,13 @@ print(vytlac_hlavicku(rq3))
 # pozriet do requestu
 print(rq3.request.url)
 print(rq3.request.body)
-print(rq3.request)
+print(rq3.request)  # vypisal objekt
 
 # rq4 = requests.get('https://api.github.com/user', auth=('user', getpass()))
 #print(rq4.status_code)
 
 # pwd = getpass()  # input()
-usr = getuser()  #
+usr = getuser()  # uzivatelske meno z OS
 # print(usr, '\t', pwd)
 
 
@@ -96,9 +96,11 @@ def give_me_five():
     status = set_status()
     return 5
 
+
 def get_status():
     global status
     print(status)
     return status
 
 # TODO Domaca uloha spravit jednu funkciu a otestovat pomocou pytestu alebo unittestu
+
