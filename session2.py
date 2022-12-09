@@ -1,60 +1,32 @@
-chladnicka = dict()  # vytvorime si slovnik chladnicka
-chladnicka["dvere"] = ["maslo", "mlieko", "juice", "syr"]  # vlozime klucove slovo dvere a zoznam potravin
-chladnicka["aktualna teplota"] = 7.3  # vlozime klucove slovo aktualna teplota a hodnotu typu float
+'''
+SESSION 2 - SLOVNIKY, HLAVNY PROGRAM, FUNKCIE, TRIEDY
 
-print(chladnicka)  # vypiseme chladnicku do konzoly
+S L O V N I K.  CHLADNICKA
 
-print(chladnicka.keys())  # pouzijeme metodu keys aby nam vypisala vsetky klucove slova
-print(chladnicka["aktualna teplota"])  # vypiseme aktualnu teplotu
-print(chladnicka.get("aktualna teplota"))  # vypiseme aktualnu teplotu pomocou metody get
+F U N K C I A - podprogram, ktory sa tvari ako dalsi prikaz Pythonu
 
-b = dict()  # vytvorime si prazdny slovnik
-b["aktualna teplota"] = 7.0  # vlozime don klucove slovo a hodnotu typu float
-chladnicka.update(b)  # aktualizujeme slovnik chladnicka hodnotami zo slovnika b pomocou metody update
-print(chladnicka.get("aktualna teplota"))  # opat vypiseme hodnotu aktualnej teploty v chladnicke
+K O N V E N C I A   P Y T H O N U
+    # Najprv importy
+    # Potom Classy a funkcie
+    # potom kod hlavneho programu
 
-# TODO Spravte v Pythone jednoduchy program kde bude 1 cyklus, dve premenne a aspon jedna logicka podmienka.
+H L A V N Y   P R O G R A M 
 
-chladnicka["policka1"] = ["salama", 'sunka', 'zeler']  # pouzijeme slovnik chladnicka a vytvorime klucove slovo policka
-chladnicka["policka2"] = ["zemiaky", 'kecup', 'zeler']
+    if __name__ == "__main__":
+        # kod
 
-def vypis_policku(chladnicka: dict, cislo_policky: str):  # vytvorime jednoduchu FUNKCIU a
-    """
-    Tato nasa funkcia nam vypise obsah policky
-    :param chladnicka: Slovnik z ktoreho chceme vypisovat
-    :param cislo_policky:  klucove slovo policky
-    :return: obsah policky v nasom pripade zoznam
-    """
-    return chladnicka[cislo_policky]
+T R I E D A - PLANIK OBJEKTU S VLASTNYMI METODAMI(FUNKCIAMI) A PREMENNYMI
+MAGICKA METODA __init__(self):  - Co sa ma stat po narodeni objektu
 
-def zrataj(a, b):  # funkcia je nas dalsi prikaz pythonu
-    """
-    Jednoducha funkcia na zratanie dvoch parametrov
-    :param a: cislo, string, bool
-    :param b: cislo, string, bool
-    :return: vysledok suctu
-    """
-    print(a + b)  # kontrolny print do konzoly
-    return a + b  # funkcia (podprogram ) vrati hodnotu suctu
+TRIEDA NasaTrieda(object)
+TRIEDA Ryba(object)
+TRIEDA Flasa(object)
 
-#  Konvencia PYTHONU
-# Najprv importy
-# Potom Classy a funkcie
-# potom kod hlavneho programu
-
-
-obsah_policky = vypis_policku(chladnicka=chladnicka, cislo_policky="policka1")  # volame funkciu vypis policku
-print(obsah_policky)  # vypiseme to co funkcia vratilo ulozene v premennej obsah_policky
-print(zrataj(43254,67476))  # volame funkciu zrataj
+VSETKO V PYTHONE JE OBJEKT !!!
 
 '''
-KOD KTORYM ZACINAME HLAVNY PROGRAM 
 
-if __name__ == "__main__":
-    # kod
-'''
-
-# funkcia odrataj
+''' F U N K C I A  odrataj '''
 def odrataj(a, b):
     '''
     tato funkcia odratava dve cisla. pozor vstupy treba verifikovat aby nevznikali bugy. Vstupom funkcie
@@ -67,15 +39,41 @@ def odrataj(a, b):
     print(a - b)
     return a -b
 
-# funkcia nasob
-# funkcia delenie
+'''F U N K C I E.  CHLADNICKY'''
 
-zrataj(432, 5435)  # volame funkciu zrataj a ako parametre davame cisla
-zrataj("Ahoj", " Svet") # volame funkciu zrataj a ako parametre davame stringy
-odrataj(43, 65) # volame funkciu odrataj a ako parametre davame cisla
-# odrataj("Ahoj", "Svet")  # ak zadame text tak vyhodi chybu
+def vypis_policku(chladnicka: dict, cislo_policky: str):  # vytvorime jednoduchu FUNKCIU a
+    """
+    Tato nasa funkcia nam vypise obsah policky
+    :param chladnicka: Slovnik z ktoreho chceme vypisovat
+    :param cislo_policky:  klucove slovo policky
+    :return: obsah policky v nasom pripade zoznam
+    """
+    return chladnicka[cislo_policky]
 
+'''FUNKCIA ZRATAJ '''
+def zrataj(a, b):  # funkcia je nas dalsi prikaz pythonu
+    """
+    Jednoducha funkcia na zratanie dvoch parametrov
+    :param a: cislo, string, bool
+    :param b: cislo, string, bool
+    :return: vysledok suctu
+    """
+    print(a + b)  # kontrolny print do konzoly
+    return a + b  # funkcia (podprogram ) vrati hodnotu suctu
 
+''' F U N K C I A  odrataj '''
+def odrataj(a, b):
+    '''
+    tato funkcia odratava dve cisla. pozor vstupy treba verifikovat aby nevznikali bugy. Vstupom funkcie
+    nesmu byt Stringy !!!
+    :param1::: a: cislo - Integer, Float
+    :param2::: b: cislo - Integer, Float
+    :return::: vysledok odcitania  - Integer, Float
+    '''
+    print(a - b)
+    return a -b
+
+''' T R I E D A. NasaTrieda()'''
 class NasaTrieda(object):
     '''
     Datova trieda obsahujuca data o nasom kurze. Samotna konstrukcia triedy je len planik toho
@@ -113,19 +111,8 @@ class NasaTrieda(object):
         """
         return meno in self.menny_zoznam  # hlada meno v zozname a vrati hodnotu True alebo False
 
-
-obj = NasaTrieda()  # TU AZ VZNIKOL OBJEKT NasaTrieda
-print(obj.__repr__())  # potvrdi ze objekt jestvuje a nachadza sa v pamati... ide o tzv. Magicku metodu.
-obj.menny_zoznam = ["Michal", "Andrej", "Jan"]  # vkladame hodnoty do premennej triedy
-print(obj.menny_zoznam)  # vypiseme zoznam ziakov
-print(obj.pocet_ziakov())  # pouzijeme metodu objektu a zistime pocet ziakov
-print(obj.vypis_zoznam())  # nechame vypisat ziakov pod seba
-
-print(obj.je_ziak_clenom_kurzu("Jozef"))  # zistujeme ci ziak Jozef je ziakom kurzu
-print(obj.je_ziak_clenom_kurzu("Andrej"))  # zistujeme ci ziak Andrej je ziakom kurzu
-obj.pocet_hodin = 160  # nastavujeme hodnotu pocet hodin -
-print(obj.pocet_hodin)  # nechame ju vypisat
-
+    
+''' T R I E D A. Ryba'''
 class Ryba(object):
     """
     trieda Ryba nam ukazuje jednoduchy model ryby
@@ -144,15 +131,9 @@ class Ryba(object):
         for i in range(0,5):
             print("PLAVA")
 
-
-
-
-
-ryba1 = Ryba(latinsky_nazov="Cyprinus carpio", voda="sladkovodna")  # Inicializujeme objekt triedy RYBA
-print(ryba1.nazov)  # vypisujeme udaj z triedy
-print(ryba1.voda)  # vypisujeme ci je sladkovodna ci morska
-ryba1.plava() # nechame ju plavat
-
+'''
+T R I E D A.  F L A S A
+'''
 
 class Flasa(object):
     """
@@ -178,18 +159,78 @@ class Flasa(object):
             print("FLASA NEOBSAHUJE DOSTATOK TEKUTINY")  # ak flasa neobsahuje dostatok tekutiny tak vypise :
 
 
+    
 
-obj = Flasa(objem=1000, obsah="voda")  # tu vznika objekt Flasa
-obj.farba = "modra"  # menime farbu objektu na modra
-print(obj.farba)  # kontrolujeme zmenu v premennej objektu
-obj.vylievanie(150)  # odlievame 150 ml
+''' H L A V N Y. P R O G R A M '''
+if __name__ == '__main__':
+    ''' S L O V N I K.  CHLADNICKA '''
+    chladnicka = dict()  # vytvorime si slovnik chladnicka
+    chladnicka["dvere"] = ["maslo", "mlieko", "juice", "syr"]  # vlozime klucove slovo dvere a zoznam potravin
+    chladnicka["aktualna teplota"] = 7.3  # vlozime klucove slovo aktualna teplota a hodnotu typu float
 
-print("PREDTYM",obj.__repr__())  # kontolujeme objekt v pamati
-del obj  # zahodime / znicime objekt Flasa
-print("POTOM",obj.__repr__())  # Objekt uz neexistuje
+    print(chladnicka)  # vypiseme chladnicku do konzoly
 
-# TODO Vytvorit classu a inicializovat vznik objektu.
-# chcem vytvorit metodu, ktora mi povie ake skupenstvo ma obsah flase
+    print(chladnicka.keys())  # pouzijeme metodu keys aby nam vypisala vsetky klucove slova
+    print(chladnicka["aktualna teplota"])  # vypiseme aktualnu teplotu
+    print(chladnicka.get("aktualna teplota"))  # vypiseme aktualnu teplotu pomocou metody get
+
+    b = dict()  # vytvorime si prazdny slovnik
+    b["aktualna teplota"] = 7.0  # vlozime don klucove slovo a hodnotu typu float
+    chladnicka.update(b)  # aktualizujeme slovnik chladnicka hodnotami zo slovnika b pomocou metody update
+    print(chladnicka.get("aktualna teplota"))  # opat vypiseme hodnotu aktualnej teploty v chladnicke
+
+    # TODO Spravte v Pythone jednoduchy program kde bude 1 cyklus, dve premenne a aspon jedna logicka podmienka.
+
+    chladnicka["policka1"] = ["salama", 'sunka', 'zeler']  # pouzijeme slovnik chladnicka a vytvorime klucove slovo policka
+    chladnicka["policka2"] = ["zemiaky", 'kecup', 'zeler']
+
+ 
+    obsah_policky = vypis_policku(chladnicka=chladnicka, cislo_policky="policka1")  # volame funkciu vypis policku
+    print(obsah_policky)  # vypiseme to co funkcia vratilo ulozene v premennej obsah_policky
+    print(zrataj(43254,67476))  # volame funkciu zrataj
+
+    # TODO SPRAV funkcia nasob
+    # TODO SPRAV funkcia delenie
+
+    zrataj(432, 5435)  # volame funkciu zrataj a ako parametre davame cisla
+    zrataj("Ahoj", " Svet") # volame funkciu zrataj a ako parametre davame stringy
+    odrataj(43, 65) # volame funkciu odrataj a ako parametre davame cisla
+    # odrataj("Ahoj", "Svet")  # ak zadame text tak vyhodi chybu
+
+
+    '''MANIPULACIA S TRIEDOU NasaTrieda()'''
+    obj = NasaTrieda()  # TU AZ VZNIKOL OBJEKT NasaTrieda
+    print(obj.__repr__())  # potvrdi ze objekt jestvuje a nachadza sa v pamati... ide o tzv. Magicku metodu.
+    obj.menny_zoznam = ["Michal", "Andrej", "Jan"]  # vkladame hodnoty do premennej triedy
+    print(obj.menny_zoznam)  # vypiseme zoznam ziakov
+    print(obj.pocet_ziakov())  # pouzijeme metodu objektu a zistime pocet ziakov
+    print(obj.vypis_zoznam())  # nechame vypisat ziakov pod seba
+
+    print(obj.je_ziak_clenom_kurzu("Jozef"))  # zistujeme ci ziak Jozef je ziakom kurzu
+    print(obj.je_ziak_clenom_kurzu("Andrej"))  # zistujeme ci ziak Andrej je ziakom kurzu
+    obj.pocet_hodin = 160  # nastavujeme hodnotu pocet hodin -
+    print(obj.pocet_hodin)  # nechame ju vypisat
+
+    
+    '''MANIPULACIA S TRIEDOU Ryba()'''
+    ryba1 = Ryba(latinsky_nazov="Cyprinus carpio", voda="sladkovodna")  # Inicializujeme objekt triedy RYBA
+    print(ryba1.nazov)  # vypisujeme udaj z triedy
+    print(ryba1.voda)  # vypisujeme ci je sladkovodna ci morska
+    ryba1.plava() # nechame ju plavat
+
+
+    '''MANIPULACIA S TRIEDOU Flasa()'''
+    obj = Flasa(objem=1000, obsah="voda")  # tu vznika objekt Flasa
+    obj.farba = "modra"  # menime farbu objektu na modra
+    print(obj.farba)  # kontrolujeme zmenu v premennej objektu
+    obj.vylievanie(150)  # odlievame 150 ml
+
+    print("PREDTYM",obj.__repr__())  # kontolujeme objekt v pamati
+    del obj  # zahodime / znicime objekt Flasa
+    print("POTOM",obj.__repr__())  # Objekt uz neexistuje
+
+    # TODO Vytvorit classu a inicializovat vznik objektu.
+    # chcem vytvorit metodu, ktora mi povie ake skupenstvo ma obsah flase
 
 
 
