@@ -1,6 +1,8 @@
 import unittest
 from unittest.mock import Mock
 import sys
+import vstupy.rychlomer
+
 
 
 mock = Mock()
@@ -30,6 +32,23 @@ class TestMockAPI(unittest.TestCase):
         self.assertFalse(str(mock.api()['msg']).isdigit())
         self.assertEqual(type(mock.api()['msg']), str, msg='Ahoj z Unittestu')
 
+
+class TestVystraha(unittest.TestCase):
+
+    def test_vystraha_normal(self):
+        vstupy.rychlomer.rychlost = Mock()
+        vstupy.rychlomer.rychlost.return_value = 50
+        self.assertFalse(vstupy.rychlomer.vystraha())
+
+    def test_vystraha_vyssia(self):
+        vstupy.rychlomer.rychlost = Mock()
+        vstupy.rychlomer.rychlost.return_value = 130
+        self.assertTrue(vstupy.rychlomer.vystraha())
+
+    def test_vystraha_nizsia(self):
+        vstupy.rychlomer.rychlost = Mock()
+        vstupy.rychlomer.rychlost.return_value = 25
+        self.assertTrue(vstupy.rychlomer.vystraha())
 
 def suite():
     suite = unittest.TestSuite()  # kolekcia testov

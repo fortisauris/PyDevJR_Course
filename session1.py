@@ -181,9 +181,9 @@ if __name__ == '__main__':
             print("DOKONCIL SOM")
             break
 
-     '''
-     IF - ELSE  - podmienka s 
-     '''
+    '''
+    IF - ELSE  - podmienka s 
+    '''
 
     a = False
     if a is True:
