@@ -28,6 +28,8 @@ Jednoduchy program na ziskavanie module.__doc__ do naseho indexu - index collect
 
 ''' PyQt6 - framework na vytvaranie GUI - balicek NaseGUI'''
 
+# python.exe -m pip install PyQt6
+
 # Widgety
 # prekreslovanie obrazovky
 # nekonecny cyklus

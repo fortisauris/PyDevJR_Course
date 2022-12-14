@@ -12,8 +12,8 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle('Moja Appka')
         tlacitko = QPushButton('STLAC')
-        tlacitko.setCheckable(True)
-        tlacitko.clicked.connect(self.tlacitko_bolo_stlacene)
+        tlacitko.setCheckable(True)  # toto robi prepinac
+        tlacitko.clicked.connect(self.tlacitko_bolo_stlacene)  #
         tlacitko.clicked.connect(self.tlacitko_bolo_prepnute)
 
         # nastav velkost
@@ -26,6 +26,7 @@ class MainWindow(QMainWindow):
 
     def tlacitko_bolo_stlacene(self):
         print('STLACENE')
+
 
     def tlacitko_bolo_prepnute(self, checked):
         print('Prepnute ?', checked)

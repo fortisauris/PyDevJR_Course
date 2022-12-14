@@ -6,4 +6,4 @@ app = QApplication(sys.argv)
 window = QPushButton('Stlac')
 window.show()
 
-app.exec()
+app.exec()  # mainloop

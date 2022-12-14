@@ -58,6 +58,6 @@ def suite():
 
 
 if __name__ == '__main__':
-    #unittest.main(verbosity=2)
-    runner = unittest.TextTestRunner()
-    runner.run(suite())
+    unittest.main(verbosity=2)
+    #runner = unittest.TextTestRunner()
+    # runner.run(suite())
