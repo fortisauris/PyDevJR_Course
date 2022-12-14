@@ -16,7 +16,10 @@ class MainWindow(QMainWindow):
         layout.addWidget(Color('blue'), 2, 2)
 
         layout.addWidget(Color('cyan'), 0,2)
-        layout.addWidget(QLabel('NADPIS'))
+        layout.addWidget(Color('green'), 1, 0)
+
+        layout.addWidget(QLabel('NADPIS'), 0,1)
+        layout.addWidget(QPushButton('OK'), 3,0)
 
         widget = QWidget()
         widget.setLayout(layout)
