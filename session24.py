@@ -1,8 +1,17 @@
 '''
-SESSION 24 - UnitTest, PyQT
+SESSION25 - PyQt6 - UnitText Mock, PyQT
 
+Predstavenie koncepcie frameworku PyQt6  = subory PQ
+
+Cyklus Nase prve okno
+Trieda MainWindow = nase druhe okno
+Trieda MainWindow = velkost, maximalna a minimalna velkost
+Signaly a Sloty
+Widget QPushButton
+Prva appka so vstupom a vzstupom
+Eventy Sledovanie pohybov a klikov mysi
+Eventy Mys tlacitka
 '''
-
 # Rozcvicka - Napisat jednoduchu klassu Mixer, Bateria, Ventil,
 # premenna triedy
 # jedna metoda

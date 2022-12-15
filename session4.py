@@ -1,18 +1,35 @@
 '''
-ZAKLADNY SYNTAX PYTHONU
-'''
+ZAKLADNY SYNTAX PYTHONU = O P A K O V A N I E
 
-# print
-# Premenna
-# len - dlzka
-# input
-# Cyklus for a while
-# Logicke bloky  if else
+
+# Prikaz print()
+# Premenna - Variable
+# prikaz len - dlzka
+# prikaz input()
+# Opakovanie uloh - Cyklus for a while
+# Logicke bloky  if elif else
 # Funkcie  def a Anonymne funkcie lambda
 # Triedy  class
 # Moduly  time, random, sys, os, re, hashlib
-# quit()
-# pass
+# prikaz quit()  - ukonci program
+# prikaz pass  - kasli na to
+
+snippet FILETOOLS - praca so subormi
+
+ROZCVICKA ukoncime nekonecny cyklus while True: pomocou logickej podmienky if  a prikazu break
+
+Kryptografia - Ceasarova Sifra
+
+Trieda Auto
+
+Zavarame objekty pomocou modulu pickle
+
+Komnenty a prezeranie __doc__stringu funkcie
+
+Algoritmus Fibonacciho rad
+
+Jednoduchy program BENCHMARK procesora pomocou hashovacich algoritmov
+'''
 import random
 import time
 
