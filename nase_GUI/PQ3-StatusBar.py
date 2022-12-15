@@ -16,7 +16,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(label)
         # TOOLBAR DEFINICIA
         toolbar = QToolBar('Nase Hlavne nastroje')
-        toolbar.setIconSize(QSize(24,24))
+        toolbar.setIconSize(QSize(30,30))
         self.addToolBar(toolbar)
         # TLACITKOVE AKCIE DEFINICIA
         tlacitkova_akcia = QAction(QIcon('icon_cc.png'),'Moje Tlacitko', self)
