@@ -77,7 +77,7 @@ class Dieta(Rodic):  # Triedy po ktorych Dieta dedi moze byt viac
         super().__init__()  # explicitne zadavame aby zdedil aj __init__() rodica
 
         
- ''' TRIEDA FileTools - demonstracia statickych a klass metod '''
+''' TRIEDA FileTools - demonstracia statickych a klass metod '''
 class FileTools(object):
     """
     Triedy nemusia byt len datove, mozu obsahovat ak je to opodstatnene programy, ktore mozeme
@@ -134,11 +134,11 @@ def hash_it(text: str):  # jednoducha funkcia na vypocet hashstringu zo zadaneho
     '''
     h = hashlib.md5()  # vytvorenie objektu hashovacieho algoritmu
     data = bytes(text, encoding="utf8")  # pripravime si data - konverzia na bytes
-    h.update(data). # hadzeme vsetko do mixera
-    return h.hexdigest(). # vrati nam hexadecimalny kod podla vybraneho algoritmu
+    h.update(data)  # hadzeme vsetko do mixera
+    return h.hexdigest()  # vrati nam hexadecimalny kod podla vybraneho algoritmu
 
- '''    H L A V N Y   P R O G R A M'''
- if __name__ == '__main__':
+'''    H L A V N Y   P R O G R A M   '''
+if __name__ == '__main__':
     '''MANIPULACIA S TRIEDOU. Teplomer()'''
     teplomer_v_obyvacke = Teplomer()  # inicializacia triedy
     teplomer_v_obyvacke.teplota = 27  #  nastavi hodnotu teplomera

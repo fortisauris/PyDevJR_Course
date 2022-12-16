@@ -1,3 +1,27 @@
+'''
+SESSION6 - ZAKLADY FUNKCIONALNEHO PROGRAMOVANIA, MODUL OPERATOR, XOR ENCRYPTION, ZETTELKASTEN
+
+Funkcionalne programovanie nam namiesto proceduralnych krokov umoznuje pomocou funkcii dopracovat sa
+rychlejsie k vysledku.
+
+prikaz zip()
+prikaz map()
+prikaz filter()
+prikaz sort() a sorted()
+
+Funkcionalne programovanie casto vyuziva lambda funkcie.
+Modul operator nam poskytuje obravske mnozstvo predrobenych operacii vhodnych do lambda funkcii
+
+XOR Encryption - Sifrovanie pomocou logickej operacie XOR medzi dvoma bytami.
+                Vyhody - rychlost, dlzka spravy sa nemeni, vyuzitie hesla aj jedinecneho OTP kluca
+                Nevyhody - entropia kluca musi byt velka, distribucia nezapamatatelneho kluca,
+
+
+ZettelKasten,  - system karticiek na zapamatanie si poznatkov. Predstavujeme si format MarkDown.
+                Karticky su prepojene pomocou linkov
+
+'''
+
 import functools
 import operator
 from session4 import abeceda
@@ -63,7 +87,7 @@ mena = ["Gregor", "Yveta", "Jozef", "Frantisek"]
 obsahuje_pismeno = list(filter(lambda x: "r" in x, mena))
 print(obsahuje_pismeno)
 
-# TODO SPravte tri mapy a tri vlastne filtre
+# ULOHA SPravte tri mapy a tri vlastne filtre
 
 redukovany_zoznam = list(functools.reduce(lambda x,y: x + y, mena))
 print(redukovany_zoznam)
@@ -204,12 +228,12 @@ def xor_enc(sprava: str, heslo: str) -> str:
         enc_sprava += str(enc_value) + " "  # prida vysledok a medzeru
     return enc_sprava  # vrati zasifrovany text v podobe cisel.
 
-# TODO Prestavka do 20:00
+#  Prestavka do 20:00
 
 print(xor_enc("BRYNDZAZDRAZELA", "HOTEL"))
 
-# TODO Spravit desifrovanie
-# TODO Skusit sa zamysliet ako Cracknut tuto sifru.
+# ULOHA Spravit desifrovanie
+# ULOHA Skusit sa zamysliet ako Cracknut tuto sifru.
 
 '''
 ZETELLKASTEN system

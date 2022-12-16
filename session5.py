@@ -1,3 +1,20 @@
+'''
+SESSION5 - GENERATORY, VIGENEROVA SIFRA, MODUL ITERTOOLS,
+
+GENERATORY - su funkcie v Pythone, ktore generuju na poziadanie hodnoty alebo hodnoty a posrtupne na zavolanie ich
+            poskytuju. - Setria pamat a su pekelne rychle.
+
+Prikaz iter() - jednoduchy iterator priamo v pythone... pomocou prikazu next() vola dalsiu hodnotu
+
+Modul Itertools obsahuje rozne druhy iteratorov, specialnych, ktore nam ulahcia pracu a zjednodusia kod
+
+JEDNODUCHY PROGRAM LIGA  - Jednoduchy program na demonstraciu Itertools
+
+PROGRAM NA ZAPAMATANIE   JE CISLO PARNE ?   Par riadkov kodu, ktore sa mozu hodit
+
+JEDNODUCHY LUSKAC HESIEL  - Program ktory hlada heslo pomocou porovnania so zachytenym hashstringom pomocou BruteForce
+
+'''
 import hashlib
 from session4 import FileTools
 
@@ -70,7 +87,7 @@ for _ in x:  # prejdeme vsetky hodnoty
 for i in fib(10):  # moznost vytiahnut hodnoty z generatora
     print(i)
 
-# TODO Vyskusat vytvorit generator
+# ULOHA Vyskusat vytvorit vlastny generator
 
 """
 V I G E N E R O V A   S I F R A
@@ -104,8 +121,8 @@ vigenere = vigenere_enc(sprava=text, pwd="HOTEL")  # pouzivame nasu funkciu
 print(vigenere)  # vytlacime do konzoly
 print(vigenere_enc.__doc__)
 
-# TODO Skuste spravit desifrovanie Vigeneroven sifry
-# TODO Dorobit medzery v texte aby fungovali.
+# ULOHA Skuste spravit desifrovanie Vigeneroven sifry
+# ULOHA Dorobit medzery v texte aby fungovali.
 
 import itertools
 import time
@@ -180,7 +197,7 @@ JEDNODUCHY PROGRAM LIGA
 teams = ["Liverpool", "FC Barcelona", "Manchester", "AJAX Amsterfam"] # zoznam timov
 zapasy = itertools.combinations(teams, 2)  # itertools nam vytvori kombinacie zapasov
 liga = dict()  # vytvorime premennu Slovnik
-for i in zapasy:  Postupne vytahujeme zapasy
+for i in zapasy:  # Postupne vytahujeme zapasy
     zapas = zapasy.__next__()  # pomocou next
     key = zapas[0]+":"+zapas[1]  # skladame klucove slovo slovnika
     print(key)  # kontrolujeme ho
@@ -188,7 +205,7 @@ for i in zapasy:  Postupne vytahujeme zapasy
 
 print(liga)  # vytlacime si slovnik
 
-# TODO prestavka do 20:00
+#  prestavka do 20:00
 
 """
  PROGRAM NA ZAPAMATANIE   JE CISLO PARNE ?
@@ -223,7 +240,7 @@ def hash_it(text: str):  # jednoducha funkcia na vypocet hashstringu zo zadaneho
 
 # Na urcenie mnoziny moznych hesiel potrebujeme informacie o Jozefovi
 Jozef = ["Kapor", 1986, "Octavia", "Slovan", "Maj", 12, "Chorvatsko", 2023, "Janka", "Dominik", "Jozef"]
-# TODO Spravit a vyskusat viacere osoby
+# ULOHA Spravit a vyskusat viacere osoby
 
 
 def PwdCracker(Person: list):
