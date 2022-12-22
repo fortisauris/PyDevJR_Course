@@ -5,8 +5,8 @@ print(now)
 print(type(now))
 print(dir(now))
 
-print(now.toString(Qt.DateFormat.ISODate))
-print(now.toString(Qt.DateFormat.RFC2822Date))
+print(now.toString(Qt.DateFormat.ISODate))  # 2022-12-19
+print(now.toString(Qt.DateFormat.RFC2822Date))  # 19 dec 2022
 
 print(now.toJulianDay())
 
