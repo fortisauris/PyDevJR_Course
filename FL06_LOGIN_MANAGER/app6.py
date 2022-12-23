@@ -1,20 +1,68 @@
 import os
-from flask import Flask, render_template, redirect, abort, request, session, flash
-from flask_wtf import FlaskForm, csrf
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
+import json
+from flask import Flask, render_template, redirect, abort, request, url_for
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+import sqlite3
 # APP CONTEXT
 app= Flask(__name__)
+
+
 app.config['SECRET_KEY'] = os.urandom(32)
 app.config['CSRF_ENABLED'] = True
+login_manager = LoginManager()
+login_manager.init_app(app)
 
-# TU SA NAM UKLADAJU DATA
-info_list = ['test1', 'test2', 'test3']
 
-#FORMULAR
-class MojFormular(FlaskForm):
-    info = StringField('Info', validators=[DataRequired(message='REQUIRED')])
-    submit = SubmitField('Submit')
+users = {'andrej@gmail.com':{'password': 'halabala'}, 'filip@gmail.com': {'password': 'halabala2'}}
+
+class User(UserMixin):
+    pass
+
+@login_manager.user_loader
+def user_loader(email):
+    if email not in users:
+        return
+    user = User()
+    user.id = email
+    return user
+
+@login_manager.request_loader
+def request_loader(request):
+    email = request.form.get('email')
+    if email not in users:
+        return
+    user = User()
+    user.id = email
+    return user
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        return '''
+        <form action='login' method='POST'>
+        <input type='text' name='email' id='email' placeholder='email'>
+        <input type='password' name='password' id='password' placeholder='password'>
+        <input type='submit' name='submit'>
+        </form>
+        '''
+    email = request.form['email']
+    if email in users and request.form['password'] == users[email]['password']:
+        user=User()
+        user.id = email
+        login_user(user)
+        return redirect(url_for('protected'))
+    return 'BAD LOGIN'
+
+@app.route('/protected')
+@login_required
+def protected():
+    return 'logged in as' + current_user.id
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return 'LOGGED OUT'
+
 
 
 # ROUTES
@@ -60,6 +108,10 @@ def info():
         if form.validate():
             print(request.form.get('info'))
             session['info'] = request.form.get('info')
+            # FIRST
+            #with open(file='session_info.json', mode='a', encoding='utf8') as f:
+            #    json.dump(fp=f, obj=session, indent=4)
+            add_record(session['info'])
             app.logger.info('INFO ULOZENA DO SESSION')
             return redirect(f'/submit')
         else:
