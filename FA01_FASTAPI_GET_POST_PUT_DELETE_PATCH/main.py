@@ -37,7 +37,7 @@ def index():
 
 @app.get('/auta')
 def zoznam_aut(q: str = None, limit: int = 20):
-    if q:
+    if q:  # query v GET requeste
         result = list()
         for a in auta_db.keys():
             print(auta_db[a].values())

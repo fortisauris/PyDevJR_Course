@@ -16,7 +16,7 @@ Výhody FastAPI = rýchlosť developovania a servovania API, podpora Async
 
 # VIRTUALIZÁCIA
 
-= VM(virtuálny počítač) rozdelíme počítač na menšie počítače
+= VM(virtuálny počítač) rozdelíme počítač na menšie počítače WSL - Ubuntu
 = Kontajnerizácia rozdelíme počítač na viacero malých kontajnerov kde bežia programy komunikujúce
 medzi sebou pomocou API.
 = Cluster - spojíme veľa malých počítačov do jedného veľkého pomocou KUBERNETES. Tento im rozdeľuje
