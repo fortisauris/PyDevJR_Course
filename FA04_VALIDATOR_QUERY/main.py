@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, File, Form, UploadFile
 from pydantic import BaseModel, ValidationError, validator
 from typing import Optional
 
@@ -17,6 +17,11 @@ class Message(BaseModel):
             raise ValueError('Ups tento kod nepoznam')
 
 poziadavky=[]
+
+def save_file(filename: str, FILE: bytes):
+    with open(file=filename, mode='wb') as f:
+        f.write(FILE)
+    return True
 
 msgs = {
     200: {'msg': 'VSETKO V PORIADKU', 'code': 200},
@@ -38,3 +43,9 @@ def get_status(q: str = None):
 def get_poziadavky():
 
     return {'poziadavky': poziadavky}
+
+@app.post('/files/')
+async def create_file(fileb: UploadFile = File(), token: str = Form()):
+    print(fileb.filename)
+    save_file(filename=fileb.filename, FILE= await fileb.read())
+    return {"token": token, 'fileb_content_type': fileb.content_type, 'file': fileb.filename}
